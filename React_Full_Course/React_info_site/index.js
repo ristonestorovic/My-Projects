@@ -21,7 +21,6 @@ function MainContent() {
   )
 }
 
-
 function Page() {
   return (
     <div>

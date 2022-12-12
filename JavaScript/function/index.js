@@ -75,7 +75,7 @@ console.log(result);
   console.log(`My name is ${y}`);
 })("Risto")
 
-//===========================================
+//==========================================
 
 function logRecursive(nr) {
   console.log("Started function: ", nr);
@@ -100,4 +100,81 @@ function getFactoriel(x) {
   }
 }
 
-console.log(getFactoriel(4));
+console.log(getFactoriel(10));
+
+// ==========================================
+
+let start = 10;
+
+function loop1(val) {
+  console.log(val);
+  if (val < 1) {
+    return
+  }
+  return loop1(val - 1)
+}
+
+loop1(start)
+
+function loop2(val) {
+  console.log(val);
+  if (val > 0) {
+    val--;
+    return loop2(val)
+  }
+  return;
+}
+
+loop2(start)
+
+//============================================
+
+function randomInteger(min, max) {
+  console.log(Math.floor(Math.random() * (max - min) + 1) + min)
+}
+
+randomInteger(1, 5)
+randomInteger(1, 1000)
+
+//============================================
+
+const anonimFunc = function (val) {
+  console.log(val);
+}
+
+anonimFunc("Risto")
+
+function anonimFunc2(val) {
+  console.log(val);
+}
+
+anonimFunc2("Risto2")
+
+//=============================================
+
+const main = function counter(x) {
+  console.log(x);
+  if (x < 10) {
+    counter(x + 1)
+  }
+  return;
+}
+
+main(2)
+
+//==============================================
+
+const one = () => { console.log('one');}
+const two = () => { console.log('two');}
+const three = () => {
+  console.log('three');
+  one();
+  two();
+}
+const four = () => {
+  console.log('four');
+  setTimeout(one, 0)
+  three()
+}
+
+four()
